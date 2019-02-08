@@ -1,4 +1,5 @@
 import sys
+import json
 
 
 def print_c(string, message_type="info", endline=True, tqdm_=False):
@@ -21,3 +22,11 @@ def print_c(string, message_type="info", endline=True, tqdm_=False):
     else:
         if "tqdm" in sys.modules:
             tqdm.write(message)
+
+
+def init_conf_file(name="conf.json"):
+
+    conf = open(name, "r")
+    conf = json.load(conf)
+
+    return conf

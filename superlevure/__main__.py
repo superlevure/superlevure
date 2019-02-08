@@ -39,7 +39,7 @@ class ColoredPrint:
                 tqdm.write(message)
 
         if self.telegram:
-            pass
+            self.telegram.send(string)
 
 
 print_c = ColoredPrint().print_c

@@ -16,8 +16,8 @@ def print_c(string, message_type="info", endline=True, tqdm_=False):
         COMMANDS[message_type][0], COMMANDS[message_type][1], string
     )
 
-    if "tqdm" in sys.modules:
-        if not tqdm_:
-            print(message, end=("\n" if endline else ""))
-        else:
+    if not tqdm_:
+        print(message, end=("\n" if endline else ""))
+    else:
+        if "tqdm" in sys.modules:
             tqdm.write(message)
